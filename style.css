@@ -1,0 +1,211 @@
+
+
+:root {
+  --bg-main: #0A1A3F;       /* أزرق داكن للصفحة */
+  --bg-section: #1E3A8A;    /* أزرق فاتح للسكشنات */
+  --bg-footer: #0A1A3F;     /* أزرق داكن للفوتر */
+
+  --primary: #FFFFFF;        /* النص الأبيض */
+  --secondary: #E0E0E0;      /* نص ثانوي / muted */
+  --accent: #00F5A0;         /* يمكن الاحتفاظ كـ accent لو تحب */
+  
+  --hover-primary: #66B2FF;  /* لون hover للزر / أزرق فاتح */
+  --hover-secondary: #3399FF;
+
+  --text-main: #FFFFFF;
+  --text-light: #E0E0E0;
+  --text-muted: #A0A0A0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  font-family: 'Poppins', sans-serif;
+}
+
+/*Header*/
+header {
+  padding: 20px 60px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-main);
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--primary);
+}
+/* Hero Section*/
+.HeroSection {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.HeroSection h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.HeroSection p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--bg-section);
+  
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: var(--hover-primary);
+  box-shadow: 0 0 20px var(--text-muted);
+}
+h1{
+   color: var(--text-main);
+}
+/*Features Section*/
+.FeaturesSection {
+  background: var(--bg-section);
+  padding: 80px 60px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.FeaturesSection div {
+  background: var(--bg-main);
+  padding: 30px;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 0 20px var(--primary);
+  transition: 0.3s ease;
+}
+
+.FeaturesSection div:hover {
+  transform: scale(1.05);
+}
+.FeaturesSection h3 {
+    color: var(--text-main);
+}
+.FeaturesSection p {
+    color: var(--text-light);
+}
+.FeatureCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--primary);
+}
+
+/*Footer*/
+footer {
+  background: var(--bg-footer);
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+}
+/* Content Section Common Style */
+.ContentSection {
+  background: var(--bg-section);
+  padding: 80px 60px;
+  display: flex;
+  flex-wrap: wrap; /* عشان الكروت تتحرك لو الشاشة صغيرة */
+  justify-content: center;
+  gap: 30px; /* مسافة بين الكروت */
+}
+
+/* الكروت */
+.content-card {
+  background: var(--bg-main);
+  padding: 30px;
+  border-radius: 15px;
+  width: 280px;
+  min-height: 220px;
+  text-align: center;
+  box-shadow: 0 0 20px var(--primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect للكارت */
+.content-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--primary);
+}
+
+/* عناوين الكروت */
+.ContentSection h3 {
+  color: var(--text-main);
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+/* نصوص الكروت */
+.ContentSection p {
+  color: var(--text-light);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* قائمة داخل الكروت */
+.ContentSection ul {
+  list-style: disc;
+  padding-left: 20px;
+  text-align: left;
+  color: var(--text-light);
+}
+
+/* Responsive للكروت على الموبايل */
+@media (max-width: 768px) {
+  .ContentSection {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+
+  .content-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .FeaturesSection {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+
+  .FeatureCard {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+} 
+.forbook li{
+    display:disc ;
+}

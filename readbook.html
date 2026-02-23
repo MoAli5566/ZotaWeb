@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book</title>
+  <style>
+    :root {
+      --bg-main: #0A1A3F;
+      --bg-section: #1E3A8A;
+      --text-main: #FFFFFF;
+      --text-muted: #D1D5DB;
+      --shadow: #000000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+    
+    /*Header*/
+header {
+  padding: 20px 60px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-main);
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: var(--text-muted);
+    }
+
+    section {
+      background: var(--bg-section);
+      margin: 40px auto;
+      padding: 40px;
+      width: 85%;
+      border-radius: 12px;
+      box-shadow: 0 0 25px var(--shadow);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    pre {
+      background: #111827;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-top: 15px;
+      box-shadow: 0 0 15px var(--shadow);
+    }
+
+    code {
+      color: #38BDF8;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 15px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ffffff33;
+      padding: 10px;
+      text-align: left;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><img src="zota_logo.png"></div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="book.html">Book</a></li>
+      </ul>
+    </nav>
+  </header>
+    
+    <section>
+<h2>1. Introduction</h2>
+<p>Zota is a high-performance, memory-safe, statically typed programming language designed for stability and clarity.</p>
+</section>
+
+<section>
+<h2>2. File Structure & Commands</h2>
+<pre><code>project/
+ ├── src/
+ │    └── main.zota
+ ├── zota.toml
+
+zota run main.zota
+zota build main.zota</code></pre>
+</section>
+
+<section>
+<h2>3. Libraries</h2>
+<pre><code>add math;
+add algorithm;
+add io;
+
+func main() {
+    let nums: list&lt;int&gt; = [5,2,8,1];
+    sort(nums);
+    let result = sqrt(16);
+    print(result);
+}</code></pre>
+<p>No dot operator for library functions.</p>
+</section>
+
+<section>
+<h2>4. Variables & Types</h2>
+<pre><code>let x: int = 10;
+var score: int = 0;
+const PI: float = 3.14;</code></pre>
+
+<p>Supported Types:</p>
+<ul>
+<li>int</li>
+<li>float</li>
+<li>string</li>
+<li>bool</li>
+<li>char</li>
+<li>list&lt;T&gt;</li>
+<li>map&lt;K,V&gt;</li>
+<li>tuple&lt;T1,T2&gt;</li>
+</ul>
+</section>
+
+<section>
+<h2>5. Functions</h2>
+<pre><code>func add(a: int, b: int) -&gt; int {
+    let sum = a + b;
+    return sum;
+}</code></pre>
+<p>{ } mandatory for blocks. Semicolon only for multiple statements.</p>
+</section>
+
+<section>
+<h2>6. Control Flow</h2>
+<pre><code>if (x &gt; 10) {
+    print("Big");
+} else {
+    print("Small");
+}
+
+for (let i: int = 0; i &lt; 10; i++) {
+    print(i);
+}</code></pre>
+</section>
+
+<section>
+<h2>7. Struct / Class / Interface</h2>
+<pre><code>struct User {
+    name: string
+    age: int
+
+    func greet() {
+        print("Hello " + name);
+    }
+}</code></pre>
+</section>
+
+<section>
+<h2>8. Error Handling</h2>
+<pre><code>func divide(a: int, b: int) -&gt; result&lt;int,string&gt; {
+    if b == 0 { return error("Cannot divide by zero"); }
+    return ok(a / b);
+}</code></pre>
+</section>
+
+<section>
+<h2>9. Ownership & Memory Safety</h2>
+<p>Each variable has a single owner. Moving a variable invalidates the previous owner. No garbage collector by default.</p>
+</section>
+
+<section>
+<h2>10. Syntax Summary</h2>
+<table>
+<tr><th>Feature</th><th>Rule</th></tr>
+<tr><td>Block</td><td>{ } mandatory</td></tr>
+<tr><td>Semicolon</td><td>Only for multiple statements</td></tr>
+<tr><td>Library call</td><td>Direct (no dot)</td></tr>
+<tr><td>Typing</td><td>Static</td></tr>
+<tr><td>Error Handling</td><td>Result & Optional types</td></tr>
+</table>
+</section>
+
+  <h4 style=" text-align: center;
+      padding: 30px;
+      color: var(--text-muted);">Zota 1.0 Official Documentation – 2026</h5>
+  
+    <footer>
+    &copy; 2026 Zota. All rights reserved.
+  </footer>
+</body>
+</html>
